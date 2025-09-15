@@ -1,0 +1,14 @@
+# Docker Compose for LocalStack
+version: '3.8'
+services:
+  localstack:
+    image: localstack/localstack:1.4
+    ports:
+      - '4566:4566'
+    environment:
+      - SERVICES=s3,dynamodb,iam,lambda,apigateway
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+    volumes:
+      - './.localstack:/tmp/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'
