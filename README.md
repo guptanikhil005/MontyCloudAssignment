@@ -168,15 +168,10 @@ curl -X POST http://localhost:8080/confirm-upload \
 curl "http://localhost:8080/images?user_id=john"
 ```
 
-## Troubleshooting
-
-- If you get "connection refused", make sure the service is running with `./start.sh`
-- If upload fails, check that your image file exists and the path is correct
-- If you get errors, check the logs with: `docker logs instagram-service`
-
 ## Stop the service
 
 When you're done testing:
 ```bash
 ./stop.sh
+
 ```
